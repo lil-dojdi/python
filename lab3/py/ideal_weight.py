@@ -43,7 +43,8 @@ def calculate_ideal_weight(height_cm, age_years, gender):
     # Расчет идеального веса по формуле Лоренца
     if gender == "M":
         return height_cm - 100 - ((height_cm - 150) / 4 + (age_years - 20) / 4)
-    return height_cm - 100 - ((height_cm - 150) / 2.5 + (age_years - 20) / 6)
+    else:
+        return height_cm - 100 - ((height_cm - 150) / 2.5 + (age_years - 20) / 6)
 
 def get_recommendation(actual_weight, ideal_weight):
     # Генерация рекомендации по весу
