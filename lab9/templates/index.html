@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>📝 To-Do List</h1>
+
+<form method="POST">
+    <input type="text" name="task" placeholder="Введите задачу" required>
+    <button type="submit">Добавить</button>
+</form>
+
+<ul>
+    {% for task in tasks %}
+        <li>
+            {{ task }}
+            <a href="/delete/{{ loop.index0 }}">❌</a>
+        </li>
+    {% endfor %}
+</ul>
+
+{% if not tasks %}
+    <p>Нет задач</p>
+{% endif %}
+
+{% endblock %}
